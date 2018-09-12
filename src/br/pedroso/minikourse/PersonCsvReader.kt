@@ -4,7 +4,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 object PersonCsvReader {
-    private const val RESOURCE_NAME = "/pessoas.csv"
+    private const val RESOURCE_NAME = "/resources/pessoas.csv"
     private const val MARRIED_STRING = "casado"
     private const val SINGLE_STRING = "solteiro"
     private const val WIDOWED_STRING = "viúvo"
@@ -12,7 +12,7 @@ object PersonCsvReader {
 
 
     private fun getFileContent(): String {
-        return String::class.java.getResource(RESOURCE_NAME).readText()
+        return Person::class.java.getResource(RESOURCE_NAME).readText()
     }
 
     fun getPeopleFromFile(): List<Person> {
