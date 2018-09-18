@@ -50,6 +50,18 @@ fun main(args: Array<String>) {
     println("Divorciado - ${people.filter {it.maritalStatus.equals(MaritalStatus.DIVORCED) }.count().toFloat().div(countPeople)*100}%")
     println("Viuvos - ${people.filter {it.maritalStatus.equals(MaritalStatus.WIDOWED) }.count().toFloat().div(countPeople)*100}%\n")
 
+    //Versao alternativa
+    /*
+    println("\n\nResolução Alternativa\n\n")
+
+    val peopleByCivilState = people.groupBy { it.maritalStatus }
+
+    println("Casados - ${peopleByCivilState[MaritalStatus.MARRIED] .count().toFloat().div(countPeople)*100}%")
+    println("Solteiros - ${peopleByCivilState[MaritalStatus.SINGLE].count().toFloat().div(countPeople)*100}%")
+    println("Divorciado - ${peopleByCivilState[MaritalStatus.DIVORCED].count().toFloat().div(countPeople)*100}%")
+    println("Viuvos - ${peopleByCivilState[MaritalStatus.WIDOWED].count().toFloat().div(countPeople)*100}%\n")
+   */
+
 
     println("\n\nExercicio 3\n\n")
 
